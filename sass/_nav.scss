@@ -1,0 +1,97 @@
+.nav {
+  padding-top: 6rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5rem;
+
+    a {
+      font-family: "Barlow Condensed", sans-serif;
+      letter-spacing: 0.1rem;
+      font-weight: 700;
+      @extend %upper;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .dot--line {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background-color: var(--clr-tertiary);
+      opacity: .5;
+    }
+
+    &--link.login a {
+      color: var(--clr-tertiary);
+    }
+  }
+
+  @include media-medium {
+    padding-top: 4rem;
+    justify-content: space-between;
+
+    &__links {
+      all: unset;
+      position: absolute;
+      z-index: 100;
+      top: 12rem;
+      width: 100%;
+      background-color: var(--clr-white);
+      text-align: center;
+      padding-block: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0px 11px 34px -13px rgba(0, 0, 0, 0.41);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1rem);
+      pointer-events: none;
+      transition: .3s;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .dot--line {
+        border-radius: unset;
+        width: 90%;
+        height: 0.1rem;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .hamburger {
+      cursor: pointer;
+      width: 3rem;
+      aspect-ratio: 1;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("../images/icon-hamburger.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .hamburger:checked {
+        background-image: url("../images/icon-close.svg");
+    }
+
+    .hamburger:checked + &__links {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+}
