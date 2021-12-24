@@ -38,9 +38,9 @@ body {
 body::after {
   content: "";
   position: absolute;
-  inset: 0 0 50% 50%;
+  inset: 0 0 47% 51%;
   background-color: var(--clr-quaternary);
-  border-bottom-left-radius: 10rem;
+  border-bottom-left-radius: 6.5rem;
   z-index: -1;
 }
 
@@ -289,10 +289,13 @@ main {
   }
   .hero__left {
     order: initial;
-    gap: 4rem;
+    gap: 2rem;
+  }
+  .hero__left--title {
+    margin-bottom: 1rem;
   }
   .hero__left--action {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .hero__left--action .cta {
     padding: 1.4rem 3.5rem;

@@ -29,9 +29,9 @@ body {
   &::after {
     content: "";
     position: absolute;
-    inset: 0 0 50% 50%;
+    inset: 0 0 47% 51%;
     background-color: var(--clr-quaternary);
-    border-bottom-left-radius: 10rem;
+    border-bottom-left-radius: 6.5rem;
     z-index: -1;
 
     @include media-medium {
